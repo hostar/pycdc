@@ -29,3 +29,12 @@ jobs:
           bash.exe ..\..\tests\all_tests.sh
         env:
           PYTHON_EXE: python.exe
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          # Artifact name
+          name: exe
+          # A file, directory or wildcard pattern that describes what to upload
+          path: /home/runner/work/pycdc/pycdc/build/*.*
+          # The desired behavior if no files are found using the provided path.
